@@ -34,7 +34,7 @@ h2 {
 }
 
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0px auto;
 
 }
@@ -102,7 +102,7 @@ header {
     background-color: aliceblue;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 30;
 
 }
 
@@ -195,9 +195,11 @@ header .right p {
     font-size: 1.3rem;
 
 }
-header .close{
+
+header .close {
     display: none;
 }
+
 /* end  */
 /* home start  */
 #home {
@@ -274,28 +276,56 @@ header .close{
 
 /* end  */
 /* sale start  */
-#sale-section{
+#sale-section {
     margin-bottom: 50px;
 }
+
 .sale-section {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.7rem;
 
 }
 
 .sale-section .sale-item {
-    background-color:#f7f7f7;
+    background-color: #f7f7f7;
     border: none;
     border-radius: 8px;
     padding: 1.2rem 1.2rem;
     flex-basis: 300px;
     flex-grow: 1;
     display: flex;
+    align-items: center;
     gap: 1.4rem;
     overflow: hidden;
     position: relative;
 }
+.sale-item::before{
+    width: 0%;
+    height: 0%;
+    content: "Hello Guys";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    opacity: 0.7;
+    color: white;
+    font-size: 1.3rem;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.3s ease;
 
+
+}
+.sale-item:hover::before{
+    width: 100%;
+    height: 100%;
+
+
+}
 .sale-item .sale-text {
     display: flex;
     flex-direction: column;
@@ -304,12 +334,13 @@ header .close{
 
 .sale-item .sale-text .shop-now {
     text-decoration: underline;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     text-transform: uppercase;
 }
-.sale-item .inner-item{
-    flex-basis: 100px;
-    flex-grow:1;
+
+.sale-item .inner-item {
+    flex-basis: 200px;
+    flex-grow: 1;
 }
 
 .sale-item img {
@@ -325,14 +356,76 @@ header .close{
     aspect-ratio: 1;
     border-radius: 50%;
     position: absolute;
-    background-color:#ebf3fe;
+    background-color: #ebf3fe;
     right: -80px;
     bottom: -80px;
     overflow: hidden;
-    
+
 }
 
 
+/* end  */
+/* support section start  */
+.support-sec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+
+}
+
+.support-sec .support-item {
+    background-color: #ebf3fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1.7rem;
+    border-radius: 8px;
+    gap: 1.6rem;
+    flex-basis: 260px;
+    flex-grow: 1;
+    position: relative;
+
+}
+.support-item::before{
+    width: 0%;
+    height: 0%;
+    content: "Hello Guys";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    opacity: 0.7;
+    color: white;
+    font-size: 1.3rem;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 2;
+    transition: all 0.3s ease;
+
+
+}
+.support-item:hover::before{
+    width: 100%;
+    height: 100%;
+
+
+}
+.support-item img{
+    color: blue;
+}
+.support-item h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+}
+.sale-item p{
+    font-size: 0.9rem;
+}
+
+/* .support-item . */
 /* end  */
 
 /* media queries start  */
@@ -359,18 +452,20 @@ header .close{
 
     }
 
-    .show-nav .right{
+    .show-nav .right {
         opacity: 1;
         visibility: visible;
         transform: translateX(0%);
         transition: all 0.3s linear;
         pointer-events: auto;
     }
-    .show-nav .close{
+
+    .show-nav .close {
         display: block;
         transition: all 0.2s;
     }
-    .show-nav .menu{
+
+    .show-nav .menu {
         display: none;
     }
 
@@ -417,9 +512,23 @@ header .close{
     }
 
     #home {
-        padding-bottom: 150px;
+        height: 120vh;
+    }
+    .support-item:hover::before{
+        width: 0%;
+        height: 0%;
+    }
+    .sale-item:hover::before{
+        width: 0%;
+        height: 0%;
     }
 
+}
+@media  screen and (min-width:1400px) {
+    .container{
+        width: 75%;
+    }
+    
 }
 
 /* end  */
