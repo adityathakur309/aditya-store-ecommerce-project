@@ -427,10 +427,11 @@ header .close {
 
 /* end  */
 /* why section start  */
-/* #why-section{
-  
-
-} */
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 
 #product-item{
     display: flex;
