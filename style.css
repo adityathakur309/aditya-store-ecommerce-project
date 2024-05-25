@@ -436,7 +436,7 @@ header .close {
  .product-container .product-item{
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1rem;
     background-color: #ebf3fe;
     padding: 1.5rem 1.2rem;
     border-radius: 3px;
@@ -460,7 +460,8 @@ header .close {
 }
 .product-item .cart-img img{
     display: block;
-    max-width: 100%;
+    width: 100%;
+
 
 }
 .product-item h2{
