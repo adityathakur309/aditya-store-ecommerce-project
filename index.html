@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>java script ecommerce website</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -161,12 +161,13 @@
     </div>
 
     <!-- template cart  -->
-    <template id ="product-item">
+    <template id="product-item">
+     <div class="product-item">
       <div class="category"></div>
       <div class="cart-img">
-        <img src="" alt="">
+        <img src="" alt="" class="cart-image">
       </div>
-      <h2 class="prodcut-name"></h2>
+      <h2 class="product-name"></h2>
       <div class="star">
         <img src="public/images/icons/star.png" alt="">
         <img src="public/images/icons/star.png" alt="">
@@ -177,7 +178,7 @@
       <p class="description"></p>
       <div class="cart-price">
         <div class="price"></div>
-        <div class="actual-price">₹999</div>
+        <div class="actual-price"></div>
       </div>
       <div class="cart-stock">
         <p>total stock avalible:</p>
@@ -185,13 +186,14 @@
       </div>
       <div class="cart-quantity">
         <p>Quantity(Pieces)</p>
-        <div class="button">
-          <button class="increment">+</button>
-          <button class="Quantity">3</button>
-          <button class="decrement">-</button>
+        <div class="buttons">
+          <button class="increment button">+</button>
+          <p class="Quantity button">3</p>
+          <button class="decrement button">-</button>
         </div>
       </div>
       <button class="btn">Add to cart</button>
+     </div> 
 
     </template>
     <!-- end  -->

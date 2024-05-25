@@ -1,13 +1,4 @@
-function loadCSS(filename) {
-  const link = document.createElement('link');
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = filename;
-  document.head.appendChild(link);
-}
 
-// Call the function to load the CSS file
-loadCSS('style.css');
 // nav script 
 let bar = document.querySelector(".bar");
 let header = document.querySelector("header")
@@ -20,7 +11,6 @@ bar.addEventListener("click",showMenu)
 
 // product cart js 
 import products from './api/product.json' assert { type: 'json' };
-import { showProductContiner } from './product-card.js';
-showProductContiner(products)
-
+import { showProductContainer } from './product-card.js';
+showProductContainer(products)
 // end 

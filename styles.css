@@ -433,7 +433,7 @@ header .close {
     gap: 2rem;
 }
 
-#product-item{
+ .product-container .product-item{
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
@@ -441,64 +441,76 @@ header .close {
     padding: 1.5rem 1.2rem;
     border-radius: 3px;
     flex-basis: 300px;
+    border-radius: 5px;
     flex-grow: 1;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition: all 0.2s ease;
 
 }
-#product-item .category{
+.product-container .product-item:hover{
+    transform: scale(1.02);
+}
+.product-item .category{
     background-color: burlywood;
     border-radius: 2.3rem;
     padding: 0.4rem 0.9rem;
     width: 110px;
+    text-align: center;
     color: var(--sec-color);
 }
-#product-item .cart-img img{
+.product-item .cart-img img{
     display: block;
     max-width: 100%;
 
 }
-#product-item h2{
+.product-item h2{
     font-size: 1.8rem;
 }
-#product-item .star img{
+.product-item .star img{
     width: 20px;
     aspect-ratio: 1;
 }
 
-#product-item .cart-price{
+.product-item .cart-price{
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
 }
-#product-item .cart-price div:nth-child(2){
+.product-item .cart-price div:nth-child(2){
     text-decoration: line-through;
 }
-#product-item .cart-stock{
+.product-item .cart-stock{
     display: flex;
     justify-content: space-between;
     gap: 1rem;
     align-items: center;
 }
-#product-item .cart-quantity{
+.product-item .cart-quantity{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
 
 }
-.cart-quantity .button button{
-    padding: 0.6rem 1.2rem;
+.cart-quantity .buttons{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.cart-quantity .buttons .button{
+    padding: 0.4rem 1rem;
     border: none;
     font-size: 1.3rem;
     color: white;
     border-radius: 5px;
-    cursor: pointer;
     text-align: center;
     background-color: var(--primary-color);
 
 
 }
-#product-item button{
+.product-item button{
     cursor: pointer;
 }
 
@@ -559,7 +571,7 @@ header .close {
 @media screen and (max-width:576px) {
     .container {
         width: 100%;
-        padding: 0px 13px;
+        padding: 0px 1rem;
 
     }
 
@@ -569,6 +581,9 @@ header .close {
 
     .right {
         width: 100%;
+    }
+    .product-container .product-item:hover{
+        transform: scale(1);
     }
 
     .home-right {
