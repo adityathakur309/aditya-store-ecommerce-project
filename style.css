@@ -81,6 +81,7 @@ h2 {
     color: var(--sec-color);
     transition: all 0.4s linear;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .btn:hover {
@@ -308,7 +309,7 @@ header .close {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: var(--primary-color);
+   background-color:rgb(66, 70, 73,0.9);
     opacity: 0.7;
     color: white;
     font-size: 1.3rem;
@@ -395,8 +396,7 @@ header .close {
     align-items: center;
     border-radius: inherit;
     overflow: hidden;
-    background-color: var(--primary-color);
-    opacity: 0.7;
+    background-color:rgb(66, 70, 73,0.9);
     color: white;
     font-size: 1.3rem;
     left: 0;
@@ -513,6 +513,19 @@ header .close {
 }
 .product-item button{
     cursor: pointer;
+}
+.product-item .cart-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s linear;
+}
+.product-item .cart-btn:hover{
+    background:linear-gradient(to right, rgb(15, 14, 14,0.8), rgb(6, 7, 7));
+    border: 2px solid var(--sec-color);
+
+
 }
 
 /* end  */
