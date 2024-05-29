@@ -19,6 +19,9 @@ export const showProductContainer = (products) => {
        productClone.querySelector(".buttons").addEventListener("click", (event) =>{
         changeQuantityVlaue(event,id,stock)
        })
+       productClone.querySelector(".cart-btn").addEventListener("click", (event) => {
+        addToCart(event,id,stock)
+       })
         productContainer.append(productClone);
         
     });
@@ -53,3 +56,61 @@ export const showProductContainer = (products) => {
 
 } 
 // end
+// add to cart function 
+
+const addToCart =(event,id,stock) => {
+    let arrLocalStorageProduct = getProductFormLs();
+    let currentProductElem  = document.querySelector(`#card${id}`)
+let productQuantity = currentProductElem.querySelector(".Quantity").innerText;
+let ProductPrice = currentProductElem.querySelector(".price").innerText;
+ProductPrice = ProductPrice.replace("₹", "");
+productQuantity = Number(productQuantity)
+ProductPrice = Number(ProductPrice * productQuantity);
+let existingProduct = arrLocalStorageProduct.find(
+    (currProd) => {
+        return currProd.id === id
+    }
+)
+if(existingProduct && productQuantity >1){
+    productQuantity = Number(existingProduct.productQuantity) + Number(productQuantity);
+    ProductPrice = existingProduct.ProductPrice * productQuantity
+    ProductPrice = ProductPrice.toFixed(2)
+    let updatedCart = {id,productQuantity,ProductPrice};
+   updatedCart = arrLocalStorageProduct.map(
+        (currProd) => {
+    return (currProd.id ===id) ? updatedCart : currProd
+        }
+    )
+    localStorage.setItem("cartProduct",JSON.stringify(updatedCart))
+}
+if(existingProduct){
+    alert("you have already added this product")
+    return false
+}
+let updateCart = {ProductPrice,productQuantity,id}
+arrLocalStorageProduct.push(updateCart)
+localStorage.setItem("cartProduct",JSON.stringify(arrLocalStorageProduct));
+
+
+}
+// end 
+
+// update cart value 
+let cartValue = document.querySelector(".cart-value")
+let updatCartValue = (arr) => {
+    cartValue.innerText = arr.length
+}
+
+// end 
+// local storage product function 
+let getProductFormLs = () => {
+    let cartProduct = localStorage.getItem("cartProduct");
+    if(!cartProduct){
+        return [];
+    }
+    cartProduct = JSON.parse(cartProduct);
+    updatCartValue(cartProduct)
+    return cartProduct;
+}
+getProductFormLs();
+// end 
